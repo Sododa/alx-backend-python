@@ -1,19 +1,14 @@
 #!/usr/bin/env python3
-"""task 0
-"""
+
+"""task 0 """
+
+from asyncio import sleep
+from random import uniform
+from typing import Generator
 
 
-import asyncio
-import random
-
-
-async def async_generator():
-    """Coroutine that generates random numbers between 0 and 10, one number
-    at a time.
-
-    Yields:
-        Generator[float, None, None]:  A random number between 0 and 10.
-    """
+async def async_generator() -> Generator[float, None, None]:
+    """ Async Generator """
     for _ in range(10):
-        await asyncio.sleep(1)
-        yield random.random() * 10
+        await sleep(1)
+        yield uniform(0, 10)
